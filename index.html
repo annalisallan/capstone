@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVE Database</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>CVE Database</h1>
+    <input type="search" id="searchBox" placeholder="Search CVE">
+</header>
+
+<section>
+    <div>
+        <label for="productFilter">Filter By Product:</label>
+        <select id="productFilter">
+            <option value="all">All Products</option>
+            <option value="xyz-software">XYZ Software</option>
+            <option value="abc-service">ABC Service</option>
+            <option value="def-web-app">DEF Web App</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="stateFilter">State:</label>
+        <select id="stateFilter">
+            <option value="all">All States</option>
+            <option value="affected">Affected</option>
+            <option value="under-review">Under Review</option>
+            <option value="not-affected">Not Affected</option>
+            <option value="mitigated">Mitigated</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="severityFilter">Severity:</label>
+        <select id="severityFilter">
+            <option value="all">All Severities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+        </select>
+    </div>
+</section>
+
+<table>
+    <thead>
+        <tr>
+            <th>CVE Name</th>
+            <th>Description</th>
+            <th>Date Reviewed</th>
+            <th>State</th>
+            <th>Reason</th>
+            <th>Solution</th>
+            <th>Product Affected</th>
+        </tr>
+    </thead>
+    <tbody id="cveTable">
+        <tr>
+        </tr>
+    </tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
