@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CVE Database</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 <header>
     <h1>CVE Database</h1>
-    <input type="search" id="searchBox" placeholder="Search CVE">
+    <input type="search" id="searchBox" placeholder="Search CVE" oninput="searchCVEs()">
 </header>
 
 <section>
@@ -17,9 +17,9 @@
         <label for="productFilter">Filter By Product:</label>
         <select id="productFilter">
             <option value="all">All Products</option>
-            <option value="xyz-software">XYZ Software</option>
-            <option value="abc-service">ABC Service</option>
-            <option value="def-web-app">DEF Web App</option>
+            <option value="Product A">Product A</option>
+            <option value="Product B">Product B</option>
+            <option value="Product C">Product C</option>
         </select>
     </div>
 
@@ -27,10 +27,10 @@
         <label for="stateFilter">State:</label>
         <select id="stateFilter">
             <option value="all">All States</option>
-            <option value="affected">Affected</option>
-            <option value="under-review">Under Review</option>
-            <option value="not-affected">Not Affected</option>
-            <option value="mitigated">Mitigated</option>
+            <option value="Affected">Affected</option>
+            <option value="Under Review">Under Review</option>
+            <option value="Not Affected">Not Affected</option>
+            <option value="Mitigated">Mitigated</option>
         </select>
     </div>
 
@@ -38,9 +38,9 @@
         <label for="severityFilter">Severity:</label>
         <select id="severityFilter">
             <option value="all">All Severities</option>
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
+            <option value="Minor">Minor</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Severe">Severe</option>
         </select>
     </div>
 </section>
@@ -52,7 +52,7 @@
             <th>Description</th>
             <th>Date Reviewed</th>
             <th>State</th>
-            <th>Reason</th>
+            <th>Severity</th>
             <th>Solution</th>
             <th>Product Affected</th>
         </tr>
@@ -63,6 +63,6 @@
     </tbody>
 </table>
 
-<script src="script.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
